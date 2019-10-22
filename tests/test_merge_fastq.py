@@ -36,11 +36,16 @@ def test_multi_fastq():
         "data/test/test_R2_002.fastq.gz",
         "--fastq2",
         "data/test/test_R2_003.fastq.gz",
+        "--out-fastq1",
+        "test_R1_merged.fastq.gz"
+        "--out-fastq2",
+        "test_R2_merged.fastq.gz"
+
     ]
     ret_code = run_cmd(cmd)
     assert ret_code == 0
-    assert os.path.isfile("merged_fastq_R1.fastq.gz") is True
-    assert os.path.isfile("merged_fastq_R2.fastq.gz") is True
+    assert os.path.isfile("test_R1_merged.fastq.gz") is True
+    assert os.path.isfile("test_R2_merged.fastq.gz") is True
 
 
 def test_single_fastq():
