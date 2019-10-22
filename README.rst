@@ -2,12 +2,11 @@
 merge_fastq
 ===========
 
-
 .. image:: https://img.shields.io/pypi/v/merge_fastq.svg
         :target: https://pypi.python.org/pypi/merge_fastq
 
-.. image:: https://img.shields.io/travis/msk-access/merge_fastq.svg
-        :target: https://travis-ci.com/msk-access/merge_fastq
+.. image:: https://travis-ci.com/msk-access/merge_fastq.svg?branch=master
+    :target: https://travis-ci.com/msk-access/merge_fastq
 
 .. image:: https://readthedocs.org/projects/merge-fastq/badge/?version=latest
         :target: https://merge-fastq.readthedocs.io/en/latest/?badge=latest
