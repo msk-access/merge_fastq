@@ -79,7 +79,7 @@ click_log.ColorFormatter.colors["info"] = dict(fg="green")
     required=False,
     default=os.getcwd(),
     type=click.Path(exists=True),
-    help="Full path to write the output files",
+    help="Full path to write the output files (default: Current working directory)",
 )
 @click.option(
     "--out-fastq1",
@@ -87,7 +87,7 @@ click_log.ColorFormatter.colors["info"] = dict(fg="green")
     required=False,
     default="merged_fastq_R1.fastq.gz",
     type=click.STRING,
-    help="Name of the merged output READ1 fastq file",
+    help="Name of the merged output READ1 fastq file (default: merged_fastq_R1.fastq.gz)",
 )
 @click.option(
     "--out-fastq2",
@@ -95,7 +95,7 @@ click_log.ColorFormatter.colors["info"] = dict(fg="green")
     required=False,
     default="merged_fastq_R2.fastq.gz",
     type=click.STRING,
-    help="Name of the merged output READ2 fastq file",
+    help="Name of the merged output READ2 fastq file (default: merged_fastq_R2.fastq.gz)",
 )
 def main(fastq1, fastq2, output_path, out_fastq1, out_fastq2):
     """Console script for merge_fastq."""
@@ -108,7 +108,7 @@ def main(fastq1, fastq2, output_path, out_fastq1, out_fastq2):
     fh.setFormatter(formatter)
     logger.addHandler(fh)
     logger.info("==================================================")
-    logger.info(">>> Running process_fastq for: %s <<<", sample_id)
+    logger.info(">>> Running merge_fastq for <<<")
     logger.info("==================================================")
     t1_start = time.perf_counter()
     t2_start = time.process_time()
