@@ -37,7 +37,7 @@ def test_multi_fastq():
         "--fastq2",
         "data/test/test_R2_003.fastq.gz",
         "--out-fastq1",
-        "test_R1_merged.fastq.gz"
+        "test_R1_merged.fastq.gz",
         "--out-fastq2",
         "test_R2_merged.fastq.gz"
 
