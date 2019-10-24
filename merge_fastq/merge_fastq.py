@@ -24,21 +24,25 @@ def run(fastq1, fastq2, output_path, out_fastq1, out_fastq2):
     out_file2 = os.path.join(output_path, out_fastq2)
     if(len(fastq1) == len(fastq2)):
         if len(fastq1) == 1:
+            logging.info(
+                "As there is only single pair of fastq files we will copy them to new name.")
             try:
                 shutil.copyfile(fastq1[0], out_file1)
-            except IOError as e:
+            except shutil.Error as e:
                 logging.error(
                     "Could not copy file %s to %s, please see the execution error. \n %s \n", fastq1[0], out_file1, e)
                 exit(1)
             try:
                 shutil.copyfile(fastq2[0], out_file2)
-            except IOError as e:
+            except shutil.Error as e:
                 logging.error(
                     "Could not copy file %s to %s, please see the execution error. \n %s \n", fastq2[0], out_file2, e)
                 exit(1)
+            logging.info("Done merging fastq file to %s and %s",
+                         out_file1, out_file2)
         else:
             merge_fastq(fastq1, fastq2, out_file1, out_file2)
-            logging.info("Done merging fastq file in %s and %s",
+            logging.info("Done merging fastq file to %s and %s",
                          out_file1, out_file2)
 
     else:

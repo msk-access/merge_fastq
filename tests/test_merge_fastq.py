@@ -60,6 +60,7 @@ def test_single_fastq():
     assert ret_code == 0
     assert os.path.isfile("merged_fastq_R1.fastq.gz") is True
     assert os.path.isfile("merged_fastq_R2.fastq.gz") is True
+    
 
 
 def run_cmd(cmd):
