@@ -24,7 +24,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = req_file('requirements.txt')
+requirements = ['Click==7.0', 'click-log==0.3.2']
 
 setup_requirements = ['pytest-runner', ]
 
@@ -33,7 +33,7 @@ test_requirements = ['pytest>=3', ]
 setup(
     author="Ronak Shah",
     author_email='rons.shah@gmail.com',
-    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*',
+    python_requires='>=3.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -61,15 +61,3 @@ setup(
     version='0.1.7',
     zip_safe=False,
 )
-
-
-def req_file(filename):
-    """
-    We're using a requirements.txt file so that pyup.io can use this for security checks
-    :param filename:
-    :return str:
-    """
-    with open(filename) as f:
-        content = f.readlines()
-        content = filter(lambda x: not x.startswith("#"), content)
-    return [x.strip() for x in content]
