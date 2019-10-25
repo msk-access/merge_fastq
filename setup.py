@@ -5,13 +5,26 @@
 
 from setuptools import setup, find_packages
 
+
+def req_file(filename):
+    """
+    We're using a requirements.txt file so that pyup.io can use this for security checks
+    :param filename:
+    :return str:
+    """
+    with open(filename) as f:
+        content = f.readlines()
+        content = filter(lambda x: not x.startswith("#"), content)
+    return [x.strip() for x in content]
+
+
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=7.0', ]
+requirements = req_file('requirements.txt')
 
 setup_requirements = ['pytest-runner', ]
 
@@ -48,3 +61,15 @@ setup(
     version='0.1.6',
     zip_safe=False,
 )
+
+
+def req_file(filename):
+    """
+    We're using a requirements.txt file so that pyup.io can use this for security checks
+    :param filename:
+    :return str:
+    """
+    with open(filename) as f:
+        content = f.readlines()
+        content = filter(lambda x: not x.startswith("#"), content)
+    return [x.strip() for x in content]
